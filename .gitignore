@@ -1,8 +1,2 @@
-
-#Dependencies
-
 /node_modules
-
-
-#Ignore config files
 package-lock.json
