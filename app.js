@@ -21,7 +21,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/api-data", apiDataRoutes);
 app.get("/", (req, res) => {
-  res.send("<h1>Hello World from NodeJS</h1>");
+  // res.send("<h1>Hello World from NodeJS</h1>");
+  res.sendFile(path.join(rootDir, "views", "index.html"));
 });
 
 // Connecting to DB
