@@ -1,10 +1,12 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const authSchema = new mongoose.Schema({
-  userName: String,
-  password: String
+const formSchema = new Schema({
+  firstName: String,
+  lastName: String,
+  emailId: String
 });
 
-const authentication = mongoose.model("authentication", authSchema);
+const formSchematics = mongoose.model("formSchematics", formSchema);
 
-module.exports = authentication;
+module.exports = formSchematics;
