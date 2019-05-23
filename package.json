@@ -4,7 +4,7 @@
   "description": "REST API made with NODE | Express | MongoDB",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "author": "Shreyas Balachandran",
   "license": "MIT",
