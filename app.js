@@ -4,6 +4,9 @@ const bodyParser = require("body-parser");
 // const path = require("path");
 const mongoose = require("mongoose");
 
+//Serving static files
+app.use(express.static("public"));
+
 // Root Directory File
 const rootDir = require("./util/path");
 
@@ -15,7 +18,9 @@ require("dotenv/config");
 
 // Creating Express App, Enabling Body-parser for Inputs
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
+
+// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //Routes
 
