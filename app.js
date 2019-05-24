@@ -1,11 +1,8 @@
 // Node Modules
 const express = require("express");
 const bodyParser = require("body-parser");
-// const path = require("path");
+const path = require("path");
 const mongoose = require("mongoose");
-
-//Serving static files
-app.use(express.static("public"));
 
 // Root Directory File
 const rootDir = require("./util/path");
@@ -19,15 +16,18 @@ require("dotenv/config");
 // Creating Express App, Enabling Body-parser for Inputs
 const app = express();
 
-// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+//Serving static files
+app.use(express.static("public"));
 
 //Routes
 
 app.use("/api-data", apiDataRoutes);
 app.get("/", (req, res) => {
-  res.send("<h1>Hello World from NodeJS</h1>");
-  // res.sendFile(path.join(rootDir, "views", "index.html"));
+  // res.send("<h1>Hello World from NodeJS</h1>");
+  res.sendFile(path.join(rootDir, "views", "index.html"));
 });
 
 // Connecting to DB

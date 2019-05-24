@@ -1,11 +1,13 @@
 const express = require("express");
 const route = express.Router();
-const path = require("path");
-const rootDir = require("../util/path");
+// const path = require("path");
+// const rootDir = require("../util/path");
 const Form = require("../model/schema");
 
 route.get("/", (req, res) => {
-  res.sendFile(path.join(rootDir, "views", "index.html"));
+  Form.find()
+    .sort({ index: -1 })
+    .then(forms => res.json(forms));
 });
 
 route.post("/", (req, res) => {
