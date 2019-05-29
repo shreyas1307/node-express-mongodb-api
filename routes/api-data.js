@@ -5,9 +5,9 @@ const route = express.Router();
 const Project = require("../model/schema");
 
 route.get("/", (req, res) => {
-  Form.find()
+  Project.find()
     .sort({ index: -1 })
-    .then(forms => res.json(forms));
+    .then(projects => res.json(projects));
 });
 
 route.post("/", (req, res) => {
