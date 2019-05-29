@@ -8,7 +8,8 @@ const mongoose = require("mongoose");
 const rootDir = require("./util/path");
 
 // Importing Route Files
-const apiDataRoutes = require("./routes/api-data");
+const createApiDataRoutes = require("./routes/add-api-data");
+const viewApiDataRoutes = require("./routes/view-api");
 
 // Dotenv file validation
 require("dotenv/config");
@@ -23,10 +24,9 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 //Routes
-
-app.use("/api-data", apiDataRoutes);
+app.use("/add-data", createApiDataRoutes);
+app.use("/view-data", viewApiDataRoutes);
 app.get("/", (req, res) => {
-  // res.send("<h1>Hello World from NodeJS</h1>");
   res.sendFile(path.join(rootDir, "views", "index.html"));
 });
 
