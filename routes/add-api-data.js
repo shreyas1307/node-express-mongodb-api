@@ -20,16 +20,9 @@ route.post("/", (req, res) => {
 
   project
     .save()
-    .then(data => {
-      console.log(`Data was saved ${data}`);
-      res.status(201).json({
-        message: "Handling POST requests to /project data",
-        createdProject: data
-      });
-    })
+    .then(data => res.json(data))
     .catch(err => {
-      console.log(err);
-      res.status(501).send({ message: err });
+      res.send(err);
     });
   res.redirect("/");
 });
