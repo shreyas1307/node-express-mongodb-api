@@ -18,8 +18,8 @@ route.post("/", (req, res) => {
     sourceCode: req.body.sourcecode
   });
 
-  // newForm.save().then(form => res.json(form));
-  console.log(newProject);
+  newProject.save().then(data => res.json(data));
+  res.redirect("/");
 });
 
 module.exports = route;

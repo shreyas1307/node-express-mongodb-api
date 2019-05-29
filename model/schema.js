@@ -1,11 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const projectSchema = new Schema({
-  // id: {
-  //   type: Number,
-  //   required: true
-  // },
+const ProjectSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -28,10 +24,10 @@ const projectSchema = new Schema({
   },
   id: {
     type: Date,
-    default: Date.now()
+    default: Date.now
   }
 });
 
-const formSchematics = mongoose.model("project", projectSchema);
+const formSchematics = mongoose.model("Projects", ProjectSchema);
 
 module.exports = formSchematics;

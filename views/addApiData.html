@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="./CSS/apiData.css" />
     <title>Document</title>
   </head>
   <body>
@@ -12,26 +12,32 @@
       <h2>REST API >> Node | Express | MongoDB</h2>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="#">View API Data</a></li>
+        <li><a href="/view-data">View API Data</a></li>
         <li><a href="/add-data">Add API Data</a></li>
-        <li><a href="#">LOG IN</a></li>
+        <!-- <li><a href="#">LOG IN</a></li> -->
       </ul>
     </header>
     <div>
-      <form action="/api-data" method="POST" type="submit">
-        <input type="text" name="name" placeholder="Project Name" />
+      <form action="/add-data" method="POST" type="submit">
+        <input type="text" name="name" placeholder="Project Name" required />
         <br />
-        <input type="url" name="img" placeholder="Project Image URL" />
+        <input type="url" name="img" placeholder="Project Image URL" required />
         <br />
         <input
           type="text"
           name="technologies"
           placeholder="Technologies Used"
+          required
         />
         <br />
-        <input type="url" name="url" placeholder="Site Link" />
+        <input type="url" name="url" placeholder="Site Link" required />
         <br />
-        <input type="url" name="sourcecode" placeholder="Enter GitHub Link" />
+        <input
+          type="url"
+          name="sourcecode"
+          placeholder="Enter GitHub Link"
+          required
+        />
         <br />
         <!-- <input type="password" name="password" /> -->
         <button type="submit">Add Project</button>
