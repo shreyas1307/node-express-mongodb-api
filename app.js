@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 // Node Modules
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -12,7 +16,8 @@ const createApiDataRoutes = require("./routes/add-api-data");
 const viewApiDataRoutes = require("./routes/view-api");
 
 // Dotenv file validation
-require("dotenv/config");
+// require("dotenv/config");
+// require("dotenv").config();
 
 // Creating Express App, Enabling Body-parser for Inputs
 const app = express();
@@ -31,9 +36,14 @@ app.get("/", (req, res) => {
 });
 
 // Connecting to DB
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () => {
-  console.log("DB Connected");
-});
+// mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () => {
+//   console.log("DB Connected");
+// });
+
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+const db = mongoose.connection;
+db.on("error", error => console.error(error));
+db.once("open", () => console.log("DB Connected!"));
 
 // Server Listen
 const PORT = process.env.PORT || 5000;

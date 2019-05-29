@@ -22,7 +22,7 @@ route.post("/", (req, res) => {
     .save()
     .then(data => res.json(data))
     .catch(err => {
-      res.send(err);
+      console.error(err);
     });
   res.redirect("/");
 });
