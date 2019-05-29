@@ -1,25 +1,37 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const formSchema = new Schema({
-  firstName: {
+const projectSchema = new Schema({
+  // id: {
+  //   type: Number,
+  //   required: true
+  // },
+  name: {
     type: String,
     required: true
   },
-  lastName: {
+  img: {
     type: String,
     required: true
   },
-  emailId: {
+  technologies: {
     type: String,
     required: true
   },
-  date: {
+  url: {
+    type: String,
+    required: true
+  },
+  sourceCode: {
+    type: String,
+    required: true
+  },
+  id: {
     type: Date,
-    default: Date.now
+    default: Date.now()
   }
 });
 
-const formSchematics = mongoose.model("formSchematics", formSchema);
+const formSchematics = mongoose.model("project", projectSchema);
 
 module.exports = formSchematics;

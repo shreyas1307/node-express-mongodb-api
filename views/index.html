@@ -17,11 +17,19 @@
     </header>
     <div>
       <form action="/api-data" method="POST" type="submit">
-        <input type="text" name="firstName" placeholder="First Name" />
+        <input type="text" name="name" placeholder="Project Name" />
         <br />
-        <input type="text" name="lastName" placeholder="Last Name" />
+        <input type="url" name="img" placeholder="Project Image URL" />
         <br />
-        <input type="email" name="emailId" placeholder="Email ID" />
+        <input
+          type="text"
+          name="technologies"
+          placeholder="Technologies Used"
+        />
+        <br />
+        <input type="url" name="url" placeholder="Site Link" />
+        <br />
+        <input type="url" name="sourcecode" placeholder="Enter GitHub Link" />
         <br />
         <!-- <input type="password" name="password" /> -->
         <button type="submit">Add User</button>
