@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 
 // Connecting to DB
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () => {
-  console.log("DB Connected!");
+  console.log("DB Connected");
 });
 
 // Server Listen

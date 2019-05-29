@@ -18,12 +18,10 @@ route.post("/", (req, res) => {
     sourceCode: req.body.sourcecode
   });
 
-  console.log(project);
-
   project
     .save()
     .then(data => {
-      console.log(data);
+      console.log(`Data was saved ${data}`);
       res.status(201).json({
         message: "Handling POST requests to /project data",
         createdProject: data
