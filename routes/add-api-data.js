@@ -4,7 +4,6 @@ const path = require("path");
 
 const rootDir = require("../util/path");
 const Project = require("../model/schema");
-const mongoose = require("mongoose");
 
 route.get("/", (req, res) => {
   res.sendFile(path.join(rootDir, "views", "addApiData.html"));
@@ -24,13 +23,15 @@ route.post("/", (req, res) => {
   project
     .save()
     .then(data => {
+      console.log(data);
       res.status(201).json({
         message: "Handling POST requests to /project data",
         createdProject: data
       });
     })
     .catch(err => {
-      res.send({ message: err });
+      console.log(err);
+      res.status(501).send({ message: err });
     });
   res.redirect("/");
 });
