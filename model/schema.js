@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+// const Schema = mongoose.Schema;
 
-const ProjectSchema = new Schema({
+const ProjectSchema = mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -28,6 +28,6 @@ const ProjectSchema = new Schema({
   }
 });
 
-const formSchematics = mongoose.model("Projects", ProjectSchema);
+const formSchematics = mongoose.model("Project", ProjectSchema);
 
 module.exports = formSchematics;

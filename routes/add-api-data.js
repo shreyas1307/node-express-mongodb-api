@@ -4,13 +4,14 @@ const path = require("path");
 
 const rootDir = require("../util/path");
 const Project = require("../model/schema");
+const mongoose = require("mongoose");
 
 route.get("/", (req, res) => {
   res.sendFile(path.join(rootDir, "views", "addApiData.html"));
 });
 
 route.post("/", (req, res) => {
-  const newProject = new Project({
+  const project = new Project({
     name: req.body.name,
     img: req.body.img,
     technologies: req.body.technologies,
@@ -18,7 +19,19 @@ route.post("/", (req, res) => {
     sourceCode: req.body.sourcecode
   });
 
-  newProject.save().then(data => res.json(data));
+  console.log(project);
+
+  project
+    .save()
+    .then(data => {
+      res.status(201).json({
+        message: "Handling POST requests to /project data",
+        createdProject: data
+      });
+    })
+    .catch(err => {
+      res.send({ message: err });
+    });
   res.redirect("/");
 });
 
