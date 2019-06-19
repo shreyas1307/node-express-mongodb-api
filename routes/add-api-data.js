@@ -21,6 +21,7 @@ route.post("/", (req, res) => {
   project
     .save()
     .then(data => res.json(data))
+    // .then(data => console.log(data))
     .catch(err => {
       console.error(err);
     });
