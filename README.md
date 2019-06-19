@@ -1,3 +1,3 @@
-# An API made with NodeJS | ExpressJS | MongoDB
+# API made with NodeJS | ExpressJS | MongoDB
 
-## Description coming soon~
+## This is a personal project and also a backend I will be using to host my project details and other such data like personal information upon validation.
