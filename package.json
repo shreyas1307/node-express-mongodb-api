@@ -4,7 +4,11 @@
   "description": "REST API made with NODE | Express | MongoDB",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "client-install": "npm install --prefix client",
+    "server": "nodemon app.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Shreyas Balachandran",
   "license": "MIT",
